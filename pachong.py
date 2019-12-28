@@ -68,7 +68,8 @@ def download_file(filename: str):
 def main():
     print('cwd:{}'.format(os.getcwd()))
     save_dir('./save_dir')
-    name_list = extract_rna_names(get_html_page("http://dude.docking.org/targets"))
+    html_page = get_html_page("http://dude.docking.org/targets")
+    name_list = extract_rna_names(html_page)
     loop_detail_page_link_list(name_list)
 
 
